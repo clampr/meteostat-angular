@@ -1,0 +1,37 @@
+.text-center {
+  display: block;
+  text-align: center;
+}
+
+.search-results {
+  width: 100%;
+
+  .country-flag {
+    margin-right: 0.5rem;
+  }
+
+  .text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  .custom-badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin: .25rem;
+    margin-left: auto;
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  }
+}

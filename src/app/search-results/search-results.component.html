@@ -1,0 +1,13 @@
+<p>
+  <!-- Placeholder -->
+  <span *ngIf="term.length < 3" class="text-center">Type at least three characters</span>
+  <!-- Results -->
+  <mat-list *ngFor="let result of results" class="search-results">
+    <mat-list-item routerLink="/station/{{result.id}}" class="cursor-pointer">
+      <img src="https://meteostat.net/files/img/flags/4x3/{{result.country.toLowerCase()}}.svg" width="16px" [alt]="result.country" class="country-flag">
+      <span class="text-truncate">{{result.name.en}}</span>
+      <span class="custom-badge">{{result.id}}</span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</p>

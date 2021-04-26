@@ -1,6 +1,10 @@
 <mat-toolbar>
-  <button mat-icon-button aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Meteostat</span>
+  <!-- Logo -->
+  <img src="https://meteostat.net/files/icon.svg" class="logo">
+  <span routerLink="/" class="cursor-pointer">Meteostat</span>
+  <span class="spacer"></span>
+  <!-- GitHub Link -->
+  <a mat-icon-button href="https://github.com/meteostat" class="cursor-pointer" aria-label="GitHub">
+    <mat-icon>code</mat-icon>
+  </a>
 </mat-toolbar>

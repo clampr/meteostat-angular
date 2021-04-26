@@ -1,0 +1,11 @@
+<div class="content-center">
+  <h1>Historical Weather Data</h1>
+  <h3>Get started by typing any place name (e.g. "montreal")</h3>
+  <!-- Search Field -->
+  <mat-form-field [style.width.px]=327 appearance="outline">
+    <input matInput [(ngModel)]="term" autocomplete="off" placeholder="Find Station">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <!-- Search Results -->
+  <app-search-results [term]="term" class="search-results"></app-search-results>
+</div>
