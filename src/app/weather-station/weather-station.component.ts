@@ -9,7 +9,7 @@ import { ajax } from 'rxjs/ajax';
 })
 
 export class WeatherStationComponent implements OnInit {
-  
+
   // Meta data for weather station
   station: any = {};
 
@@ -35,7 +35,7 @@ export class WeatherStationComponent implements OnInit {
 
   // Talk to meta data API endpoint
   getStationMetaData(): void {
-    const identifier: String|null = this.route.snapshot.paramMap.get('stationId')
+    const identifier: String|null = this.route.snapshot.paramMap.get('stationId');
     if (identifier !== null && identifier.length === 5) {
       const stations = ajax({
         url: `https://api.meteostat.net/v2/stations/meta?id=${identifier}`,
@@ -54,7 +54,7 @@ export class WeatherStationComponent implements OnInit {
           );
         },
         err => console.error(err)
-      );      
+      );
     }
   }
 
@@ -64,16 +64,16 @@ export class WeatherStationComponent implements OnInit {
       const startDate: Date = new Date(start.value);
       const endDate: Date = new Date(end.value);
 
-      const startDateString = startDate.toISOString().substr(0, 10)
-      const endDateString = endDate.toISOString().substr(0, 10)
- 
-      this.getWeatherData(startDateString, endDateString)
+      const startDateString = startDate.toISOString().substr(0, 10);
+      const endDateString = endDate.toISOString().substr(0, 10);
+
+      this.getWeatherData(startDateString, endDateString);
     }
   }
 
   // Get weather data for date range
   getWeatherData(start: String, end: String) {
-    if (end) { 
+    if (end) {
       const weatherData = ajax({
         url: `https://api.meteostat.net/v2/stations/daily?station=${this.station.id}&start=${start}&end=${end}`,
         method: 'GET',

@@ -11,14 +11,14 @@ export class SearchResultsComponent implements OnChanges {
 
   // Search term
   @Input('term') term: string;
-  
+
   // List of results
   results: any = [];
 
   // Find station when term changes
   ngOnChanges(changes: SimpleChanges) {
     const term: SimpleChange = changes.term;
-    if(term.currentValue.length > 2){
+    if (term.currentValue.length > 2){
       const stations = ajax({
         url: `https://api.meteostat.net/v2/stations/search?query=${term.currentValue}`,
         method: 'GET',
@@ -34,7 +34,7 @@ export class SearchResultsComponent implements OnChanges {
         err => console.error(err)
       );
     } else {
-      this.results = []
+      this.results = [];
     }
   }
 
